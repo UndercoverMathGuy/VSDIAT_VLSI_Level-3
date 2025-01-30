@@ -135,6 +135,7 @@
 &nbsp;
 
 ### 2. Completion of Task 1 (Finding of Flop Ratio)
+&nbsp;
 $$
     \text{Flop Ratio} = \frac{\text{Number of D Flip Flops}}{\text{Number of Cells}}
 $$
@@ -151,3 +152,26 @@ $$
 $$
     \text{Flop Ratio percentage}=0.1084296853993009*100=10.84296853993009\%
 $$
+
+----
+&nbsp;
+
+## Section 2
+
+### Theory
+
+<details>
+<summary>Expand or collapse</summary>
+
+### Calculating width and height of die and core
+- Core and Die definitions
+  - Core is the part of the die upon which the fundamental components of the chip are built
+  - Die is the semiconductor wafer on which the cores are fabricated
+- Minimum area of core is the sum of all the areas of the fundamental components (i.e. area of the netlist) and is unachievable due to the need for space for wires, buffers etc.
+- Utilisation factor
+  - Quantifies the space efficiency of the floor plan of the chip
+  - $\text{Utilisation factor}=\frac{\text{Area of the netlist}}{\text{Total area of the core}}$
+- Aspect Ratio
+  - Height to width ratio of the core
+  - $\text{Aspect Ratio}=\frac{\text{Height}}{\text{Width}}$
+</details>
