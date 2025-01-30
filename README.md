@@ -127,9 +127,9 @@
 
 &nbsp;
 ### Images of code running
-![](image.png)
-![](image2.png)
-![](image3.png)
+![](sources/image.png)
+![](sources/image2.png)
+![](sources/image3.png)
 
 &nbsp;
 
@@ -141,7 +141,7 @@ $$
     \text{Flop Ratio Percentage} = \text{Flop Ratio} * 100
 $$
 ### Image of synthesis results
-![](image4.png)
+![](sources/image4.png)
 
 ### Calculation of Flop Ratio:
 $$
