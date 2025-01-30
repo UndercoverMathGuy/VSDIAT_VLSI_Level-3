@@ -127,11 +127,11 @@
 
 &nbsp;
 ### Images of code running
-<p align="center">
+
 ![](sources/image.png)
 ![](sources/image2.png)
 ![](sources/image3.png)
-</p>
+
 &nbsp;
 
 ### 2. Completion of Task 1 (Finding of Flop Ratio)
