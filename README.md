@@ -210,5 +210,10 @@ $$
     - Decentralised, independent power supplies that form a grid-like 'mesh' across the chip 
     - Ensures that power need not pass through only one supply but can be taken from the nearest power supply reducing stress on one supply
 
-### 
+### Pin placement
+- Input and output pins are placed on the edge of the die and can be positioned or whichever side is most convenient to the design or designer
+- The pre-placed cells on the chip need to be placed strategically near the appropriate input/output pins to which they are most closely connected.
+- The input and output pins must also be thoughtfully placed to ensure that any flip-flops or components do not interfere with the pre-placed cells on the chip.
+- The clock ports must also be given special consideration as they are thicker than the data inputs and outputs due to the necessity of the least resistance for the clock signal.
+- The die edge must be blocked for logical cell placement for the automated routing tool as it is reserved for pins.
 </details>
