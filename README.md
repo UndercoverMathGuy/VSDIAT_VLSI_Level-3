@@ -1,5 +1,5 @@
-# VSD-IAT VLSI for High School Level 3
-## Design Flow
+# **VSD-IAT VLSI for High School Level 3**
+# Design Flow
 <details>
 <summary>Expand or collapse</summary>
 
@@ -89,7 +89,9 @@
   - STA (Static Timing Analysis): Ensures correct timing operation.
 </details>
 
-## Section 1
+&nbsp;
+
+# Section 1
 
 ### 1. Initialise OpenLane Flow Docker and Perform Synthesis
 ```bash
@@ -99,9 +101,6 @@
 
     docker
     #Activates Docker container for OpenLane
-
-    pwd
-    #Unlocks Docker container
 
 ```
     
@@ -156,7 +155,7 @@ $$
 ----
 &nbsp;
 
-## Section 2
+# Section 2
 
 ### Theory
 
@@ -217,3 +216,87 @@ $$
 - The clock ports must also be given special consideration as they are thicker than the data inputs and outputs due to the necessity of the least resistance for the clock signal.
 - The die edge must be blocked for logical cell placement for the automated routing tool as it is reserved for pins.
 </details>
+
+### Run floorplan and generate floorplan output
+
+```bash
+#Run synthesis of the design before this step
+
+run_floorplan
+```
+
+#### Images of code running
+
+![](sources/image5.png)
+![](sources/image6.png)
+![](sources/image7.png)
+
+### Completion of Task 1 (Find area of die in microns):
+
+$$
+  \text{According to floorplan def above,}
+$$
+$$
+  \text{Die width in units}=660685-0=660685
+$$
+$$
+  \text{Die height in units}=671405-0=671405
+$$
+$$
+  \text{1 unit = 1000 microns}
+$$
+$$
+  \text{Die width in microns}=\frac{660685}{1000}=660.685
+$$
+$$
+  \text{Die height in microns}=\frac{671405}{1000}=671.405
+$$
+$$
+  \text{Area of die in microns}=(660.685*671.405)\text{ microns square}=443587.212425\text{ microns square}
+$$
+
+### Completion of Task 2 (Load generated floorplan in Magic):
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-01_13-15/tmp/floorplan/
+
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 15-pdn.def &
+```
+
+### Floorplan def in Magic
+![](sources/image8.png)
+
+&nbsp;
+
+### Equidistant port placement
+
+![](sources/image9.png)
+
+&nbsp;
+
+### Port layers
+
+![](sources/image10.png)
+
+![](sources/image11.png)
+
+&nbsp;
+
+### Decap and tap cells
+
+![](sources/image12.png)
+
+&nbsp;
+
+### Equally spaced tap cells on diagonals
+
+![](sources/image13.png)
+
+&nbsp;
+
+### Unplaced standard cells
+
+![](sources/image14.png)
+
+&nbsp;
+
