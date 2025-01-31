@@ -174,4 +174,41 @@ $$
 - Aspect Ratio
   - Height to width ratio of the core
   - $\text{Aspect Ratio}=\frac{\text{Height}}{\text{Width}}$
+
+### Pre-placed cells and concept of modules
+- Module
+  - Part of the chip's combinational logic with its own inputs and outputs
+  - Modular and can be repeatedly instantiated using a preset
+- Pre-placed cells
+  - These modules are manually placed on the chip layout before automated planning and routing.
+  - Placed during floorplanning
+  - Good placement is essential as the automated routing and planning algorithm has to work around and not interfere with these modules.
+
+### Need for decoupling capacitors
+- Output voltages are characterised into 0 and 1 with a section of noise between them.
+- Due to the resistance offered by the physical wires and the distance between the power supply and the components, a voltage drop can be seen.
+- If the voltage drop is so major that the input voltage itself is within the noise band, uncertain and incorrect results may be seen.
+- Hence, to reduce the effect of these voltage drops, a decoupling capacitor can be connected in a parallel connection with the module:
+  - When there is a demand for voltage, the charge is taken from the capacitor not from the power supply directly
+  - The power supply is itself connected to the capacitor and ensures that it is charged up to an accpetable voltage
+  - This acts like a buffer ensuring that the voltage drops and noise in the circuit voltage don't affect the components' outputs
+  - The close physical proximity to the components themselves helps reduce the further voltage drop due to resistance
+
+### Power planning
+- When communication between modules is over a large distance, signal loss due to resistance is likely and cannot be alleviated through a decoupling capacitor as its unfeasible to place decoupling capacitors on every connection on the chip.
+- Ground Bounce and Voltage Droop
+  - Ground Bounce
+    - After the inversion logic, a large number of charged capacitors in a bus drain their charge (change state from 1 to 0) simulataneously into the same ground line.
+    - This leads to a sudden increase in the voltage of the ground and can cause inaccuracies if the voltage enters the noise band.
+    - This increase however, is temporary and returns to normal soon after. 
+  - Voltage Droop
+    - After the inversion logic, a large number of uncharged capacitors in a bus take up charge simultaneously from the same power line.
+    - This leads to a sudden drop in the power voltage and can cause inaccuracies if it falls enough to enter the noise band.
+    - This decrease, however is temporary and returns to normal soon after.
+  - Cause - Singular power supply and ground leading to overstress of the voltage supply
+  - Solution 
+    - Decentralised, independent power supplies that form a grid-like 'mesh' across the chip 
+    - Ensures that power need not pass through only one supply but can be taken from the nearest power supply reducing stress on one supply
+
+### 
 </details>
